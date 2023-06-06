@@ -1,0 +1,8 @@
+[cache]
+    dir = /home/aime/dvc-cache
+    shared = group
+    type = symlink
+[core]
+    remote = remote
+['remote "remote"']
+    url = /home/aime/backup
