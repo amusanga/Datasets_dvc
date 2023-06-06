@@ -4,5 +4,6 @@
     type = symlink
 [core]
     remote = remote
+    autostage = true
 ['remote "remote"']
     url = /home/aime/backup
