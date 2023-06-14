@@ -50,3 +50,38 @@ git tag -a "Ttiff_dataset_v2.0" -m "Added more  Ttiff dataset"
 ```
 
 repeat 4
+
+### Using our versioned data in our project
+
+#### Load dataset version 1
+```
+with dvc.api.open(
+    'ttiff_images_dataset/data/metadata.csv',
+    repo='/home/aime/TrustStamp/Datasets_dvc',
+    remote="remote",
+    mode='rb',
+    rev='Ttiff_dataset_v1.0'
+) as f:
+    
+    Ttiff_dataset_v1 = pd.read_csv(f)
+
+```
+#### Load dataset version 2
+```
+with dvc.api.open(
+    'ttiff_images_dataset/data/metadata.csv',
+    repo='/home/aime/TrustStamp/Datasets_dvc',
+    remote="remote",
+    mode='rb',
+    rev='Ttiff_dataset_v2.0'
+) as f:
+    
+    Ttiff_dataset_v2 = pd.read_csv(f)
+
+```
+
+Pull the data in another project
+
+```
+dvc import --rev "Ttiff_dataset_v1.0" ~/TrustStamp/Datasets_dvc ttiff_images_dataset/data/tiff_images
+```
