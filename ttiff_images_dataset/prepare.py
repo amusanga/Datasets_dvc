@@ -24,7 +24,7 @@ def list_files_with_extensions(datadir, file_extensions):
 if __name__ == "__main__":
         # Prepare the output csv filename
 
-    data_paths = list_files_with_extensions(DATA_PATH, file_extensions=[".tif"] )
+    data_paths = list_files_with_extensions(DATA_PATH, file_extensions=[".tif", ".dcm"] )
 
     if not os.path.exists(OUT_DIR):
         os.makedirs(OUT_DIR)
