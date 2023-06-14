@@ -1,4 +1,10 @@
 
+Initialize  DVC 
+
+```
+dvc init
+```
+
 Create shared cache
 
 ```
