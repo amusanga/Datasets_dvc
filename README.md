@@ -51,7 +51,15 @@ git tag -a "Ttiff_dataset_v2.0" -m "Added more  Ttiff dataset"
 
 repeat 4
 
-### Using our versioned data in our project
+### Switching between workspace versions
+The DVC command that helps get a specific committed version of data is designed to be similar to git checkout. All we need to do in our case is to additionally run dvc checkout to get the right data into the workspace.
+
+```
+git checkout Ttiff_dataset_v1.0
+dvc checkout
+```
+
+### Using our versioned data in our project with Python API
 
 #### Load dataset version 1
 ```
